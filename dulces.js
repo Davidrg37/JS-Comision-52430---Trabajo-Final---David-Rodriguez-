@@ -238,7 +238,7 @@ selectComida.addEventListener('change', (event) => {
 
     const comidaNombre = comidas.find((opc) => opc.id === comidaSeleccionada)
     console.log(comidaNombre.title) //2do Nombre de la comida//
-    console.log(comidaNombre.concepto) //3ro Nombre de la comida//
+    console.log(comidaNombre.titulo) //3ro Nombre de la comida//
 
 
     const precioComida = comidas.find((opc) => opc.id == comidaSeleccionada);
@@ -306,7 +306,7 @@ function crearOrdenComida(e){
 opcionesComida();
 
 const combosAñadir1 = document.getElementById("pagar2");
-combosAñadir1.addEventListener("submit", (e) => {
+combosAñadir1.addEventListener("click", (e) => {
 
     e.preventDefault();
     localStorage.setItem("orden", JSON.stringify(combosOrden));

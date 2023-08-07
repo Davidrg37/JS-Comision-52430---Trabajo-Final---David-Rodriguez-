@@ -140,10 +140,10 @@ const combos = [menu1, menu2, menu3, menu4, menu5, menu6];
 const comidas = [];
 
 class Comidas {
-    constructor (id, title, concepto, precio){
+    constructor (id, title, titulo, precio){
         this.id = id,
         this.title = title,
-        this.concepto = concepto,
+        this.titulo = titulo,
         this.precio = precio
     }
 }

@@ -50,3 +50,78 @@ const { value: email } = await Swal.fire({
   }
   
 }
+
+const orden = JSON.parse(localStorage.getItem('orden'))
+console.log(orden)
+
+const resumenOrden = document.getElementById('part5')
+
+for(let p=0; p<orden.length; p+=1){
+
+  let totalComida = orden[p].precio*orden[0].cantidad;
+  const totalOrden = currency(totalComida, {
+    symbol: "$",
+    pattern: "# !",
+    separator: ".",
+    decimal: ",",
+});
+
+  console.log(orden[p].titulo)
+  console.log(orden[p].cantidad)
+  console.log(orden[p].precio)
+  console.log(totalOrden.format())
+
+  resumenOrden.innerHTML = "Escogiste " + orden[p].cantidad + " " + orden[p].titulo + ". El monto a pagar es " + totalOrden.format()
+
+}
+
+
+
+
+function renderCombos1(){
+  for(let p=0; p<orden.length; p+=1){
+
+    let totalComida = orden[p].precio*orden[0].cantidad;
+    const totalOrden = currency(totalComida, {
+      symbol: "$",
+      pattern: "# !",
+      separator: ".",
+      decimal: ",",
+  });
+  
+    console.log(orden[p].titulo)
+    console.log(orden[p].cantidad)
+    console.log(orden[p].precio)
+    console.log(totalOrden.format())
+  
+    resumenOrden.innerHTML = "Escogiste " + orden[p].cantidad + " " + orden[p].titulo + ". El monto a pagar es " + totalOrden.format()
+  
+  }
+  
+}
+
+
+function renderCombos2(orden){
+  console.log(orden)
+
+  const resumenOrden = document.getElementById('part5')
+
+  let html = "";
+  let totalComida = orden[p].precio*orden[0].cantidad;
+
+  for(let p=0; p<orden.length; p+=1){
+    html += `
+    <div>
+        
+        <p>Escogiste ${cantidad} ${titulo}. El total a pagar por esos combos es ${totalComida}</p>
+        <p>Escogiste ${cantidad} ${titulo}. El total a pagar por esos combos es ${totalComida}</p>
+
+    </div>
+    <hr>`
+  }
+  
+
+
+  resumenOrden.innerHTML = html
+
+}

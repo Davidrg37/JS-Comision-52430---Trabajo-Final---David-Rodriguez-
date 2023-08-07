@@ -474,3 +474,11 @@ h1.cYc {
         @extend #pagar1
     }
 }
+
+.ordenDeComida{
+    display: flex;
+    flex-flow:row;
+    flex-shrink: 10px;
+    justify-content: center;
+    align-items: center;
+}
