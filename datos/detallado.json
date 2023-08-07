@@ -1,0 +1,61 @@
+[
+    {
+    "opcion": "1",
+    "title" : "Opcion 1",
+    "nombre": "Pop pequeño",
+    "precio" : "8.000 $"
+    },
+
+    {
+    "opcion": "2",
+    "title" : "Opcion 2",
+    "nombre": "Pop mediano",
+    "precio" : "10.000 $"
+    },
+
+    {
+        "opcion": "3",
+        "title" : "Opcion 3",
+        "nombre": "Pop grande",
+        "precio" : "12.000 $"
+    },
+
+    {
+        "opcion": "4",
+        "title" : "Opcion 4",
+        "nombre": "Bebida pequeña",
+        "precio" : "5.000 $"
+    },
+
+    {
+        "opcion": "5",
+        "title" : "Opcion 5",
+        "nombre": "Bebida mediana",
+        "precio" : "7.000 $"
+    },
+    {
+        "opcion": "6",
+        "title" : "Opcion 6",
+        "nombre": "Bebida grande",
+        "precio" : "9.000 $"
+    },
+    {
+        "opcion": "7",
+        "title" : "Opcion 7",
+        "nombre": "Comida caliente (pancho, hamburguesa)",
+        "precio" : "10.000 $"
+    },
+    {
+        "opcion": "8",
+        "title" : "Opcion 8",
+        "nombre": "Tableta de dulce",
+        "precio" : "10.000 $"
+    },
+    {
+        "opcion": "9",
+        "title" : "Opcion 9",
+        "nombre": "Bolsa de frituras de 200gr.",
+        "precio" : "8.000 $"
+    }
+
+]

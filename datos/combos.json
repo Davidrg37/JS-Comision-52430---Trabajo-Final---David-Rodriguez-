@@ -1,0 +1,37 @@
+[
+    {
+    "opcion": "1",
+    "nombre": "Combo 1 = Pop y Soda chico",
+    "precio" : "10.000 $"
+    },
+
+    {
+    "opcion": "2",
+    "nombre": "Combo 2 = Pop y Soda mediano",
+    "precio" : "13.000 $"
+    },
+
+    {
+        "opcion": "3",
+        "nombre": "Combo 3 = Pop y Soda grande",
+        "precio" : "16.000 $"
+    },
+
+    {
+        "opcion": "4",
+        "nombre": "Combo 4 = Pop grande y 2 sodas medianos",
+        "precio" : "18.000 $"
+    },
+
+    {
+        "opcion": "5",
+        "nombre": "Combo 5 = 2 Pop grande y 2 sodas medianos",
+        "precio" : "20.000 $"
+    },
+    {
+        "opcion": "6",
+        "nombre": "Combo 6 = Comida caliente (pancho o hamburguesa) y bebida mediana",
+        "precio" : "25.000 $"
+    }
+
+]
