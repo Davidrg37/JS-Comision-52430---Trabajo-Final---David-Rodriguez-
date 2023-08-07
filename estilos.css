@@ -274,6 +274,8 @@ h1.cYc {
   font-family: "Cine";
   font-size: 60px;
   background-color: white;
+  background-color: #85FFBD;
+  background-image: linear-gradient(90deg, #85FFBD 0%, #FFFB7D 33%, #ede264 66%, #8dcff3 100%);
 }
 
 .container {
@@ -413,12 +415,15 @@ h1.cYc {
 }
 
 .no-select, .finalMenu {
+  background-image: url(./imagen/Cortina\ de\ cine.jpg);
   text-align: center;
   border: 2px solid black;
 }
 .no-select p, .finalMenu p {
   font-family: "Titulos";
   font-size: 35px;
+  color: white;
+  text-shadow: 1px 1px 2px rgb(15, 15, 12), 0 0 5rem rgb(250, 246, 246), 0 0 0.2em rgb(11, 11, 10);
 }
 .no-select #pagar1, .finalMenu #pagar1, .finalMenu #pagar2 {
   font-size: 25px;

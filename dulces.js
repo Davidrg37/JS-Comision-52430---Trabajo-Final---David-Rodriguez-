@@ -1,9 +1,22 @@
 const combosAñadir = document.getElementById("pagar1");
+function mensajePagar(){
+    Swal.fire({
+        icon: 'success',
+        title: 'Genial',
+        text: 'Te redirigimos a la pagina para completar el proceso!',
+    })
+    
+}
+
+
 
 combosAñadir.addEventListener("click", (e) => {
+    mensajePagar();
     location.href = "./resumen/resumen.html";
 
 })
+
+
 
 
 const ordenCombos = new Object()
@@ -308,7 +321,7 @@ opcionesComida();
 const combosAñadir1 = document.getElementById("pagar2");
 combosAñadir1.addEventListener("click", (e) => {
 
-    e.preventDefault();
+    mensajePagar
     localStorage.setItem("orden", JSON.stringify(combosOrden));
     location.href = "./resumen/resumen.html";
     
