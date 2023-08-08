@@ -58,6 +58,8 @@ const resumenOrden = document.getElementById('part5')
 
 let html = " <p> Tu orden de comida es la siguiente </p> ";
 
+
+
 for(let p=0; p<orden.length; p+=1){
   const cantidad = orden[p].cantidad;
   const titulo = orden[p].titulo;
@@ -82,8 +84,26 @@ for(let p=0; p<orden.length; p+=1){
 
   </div>
   <hr>`
+
 }
 
 
 
 resumenOrden.innerHTML = html
+
+const totalOrdenComida = totalComida;
+
+const resumenTotal = document.getElementById('part6')
+
+const suma = (a, b)=> a + b;
+
+const totalPagar = suma;
+console.log(totalPagar(entradasTotal, totalComida))
+
+const totalFinal = currency(totalPagar, {
+  symbol: "$",
+  pattern: "# !",
+  separator: ".",
+  decimal: ",",
+})
+
