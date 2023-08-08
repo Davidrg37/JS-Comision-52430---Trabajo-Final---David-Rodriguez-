@@ -487,4 +487,13 @@ h1.cYc {
     flex-shrink: 10px;
     justify-content: center;
     align-items: center;
+    background-image: url(./imagen/fondo\ cotufa.jpg);
+    p{
+        text-align: center;
+        font-family: "Contenidos";
+        font-weight: bold;
+        font-size: 30px;
+        color: rgb(12, 9, 9);
+        text-shadow: 1px 1px 2px rgb(245, 245, 239), 0 0 5rem rgb(205, 26, 26), 0 0 0.2em rgb(9, 9, 9);
+    }
 }

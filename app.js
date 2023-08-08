@@ -56,39 +56,34 @@ console.log(orden)
 
 const resumenOrden = document.getElementById('part5')
 
-function renderCombos2(orden){
-  console.log(orden)
+let html = " <p> Tu orden de comida es la siguiente </p> ";
 
-  const resumenOrden = document.getElementById('part5')
+for(let p=0; p<orden.length; p+=1){
+  const cantidad = orden[p].cantidad;
+  const titulo = orden[p].titulo;
+  const totalComida = orden[p].precio*orden[0].cantidad;
 
-  let html = "";
+  const totalOrden = currency(totalComida, {
+    symbol: "$",
+    pattern: "# !",
+    separator: ".",
+    decimal: ",",
+})
 
-  for(let p=0; p<orden.length; p+=1){
-    const cantidad = orden[p].cantidad;
-    const titulo = orden[p].titulo;
-    const totalComida = orden[p].precio*orden[0].cantidad;
+  console.log(orden[p].titulo)
+  console.log(orden[p].cantidad)
+  console.log(orden[p].precio)
+  console.log('Tu orden es ' + totalOrden.format())
 
-    const totalOrden = currency(totalComida, {
-      symbol: "$",
-      pattern: "# !",
-      separator: ".",
-      decimal: ",",
-  })
+  html += `
+  <div>
 
+      <p> Escogiste: Cantidad : ${cantidad} - ${titulo}. El total a pagar por esta ordes es ${totalOrden.format()}</p>
 
-
-    html += `
-    <div>
-        <p> Tu orden de comida es la siguiente </p>
-        <p>Escogiste ${cantidad} ${titulo}. El total a pagar por esos combos es ${totalOrden}</p>
-        <p>Escogiste ${cantidad} ${titulo}. El total a pagar por esos combos es ${totalOrden}</p>
-
-    </div>
-    <hr>`
-  }
-  
-
-
-  resumenOrden.innerHTML = html
-
+  </div>
+  <hr>`
 }
+
+
+
+resumenOrden.innerHTML = html
