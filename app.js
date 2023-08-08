@@ -17,6 +17,7 @@ cantEntradas.innerHTML = entradasPelicula + ` entradas.`;
 
 const pagarEntradas = document.getElementById('part4')
 const entradasTotal = carrito[0].precio * entradasPelicula;
+console.log(entradasTotal)
 const totalValue = currency(entradasTotal, {
     symbol: "$",
     pattern: "# !",
@@ -58,12 +59,19 @@ const resumenOrden = document.getElementById('part5')
 
 let html = " <p> Tu orden de comida es la siguiente </p> ";
 
-
+let totalComidaOrden = 0;
+let valorTotal = 0;
 
 for(let p=0; p<orden.length; p+=1){
   const cantidad = orden[p].cantidad;
   const titulo = orden[p].titulo;
   const totalComida = orden[p].precio*orden[0].cantidad;
+
+  console.log(totalComida)
+  valorTotal+= totalComida;
+  console.log(valorTotal)
+  totalComidaOrden = totalComida;
+
 
   const totalOrden = currency(totalComida, {
     symbol: "$",
@@ -91,19 +99,26 @@ for(let p=0; p<orden.length; p+=1){
 
 resumenOrden.innerHTML = html
 
-const totalOrdenComida = totalComida;
+
 
 const resumenTotal = document.getElementById('part6')
 
-const suma = (a, b)=> a + b;
+console.log(totalComidaOrden)
 
-const totalPagar = suma;
-console.log(totalPagar(entradasTotal, totalComida))
+const suma = (a, b) => a + b
+const total1 = suma;
+console.log(total1(entradasTotal, valorTotal));
 
-const totalFinal = currency(totalPagar, {
+const totalFinal = currency(total1(entradasTotal, valorTotal), {
   symbol: "$",
   pattern: "# !",
   separator: ".",
   decimal: ",",
 })
+
+console.log(totalFinal.format())
+
+resumenTotal.innerHTML = 
+`<p> El saldo a pagar es ${totalFinal.format()}</p>`  
+
 
