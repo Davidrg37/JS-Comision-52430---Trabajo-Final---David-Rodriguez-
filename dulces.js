@@ -1,18 +1,23 @@
 const combosAñadir = document.getElementById("pagar1");
+
 function mensajePagar(){
     Swal.fire({
         icon: 'success',
         title: 'Genial',
         text: 'Te redirigimos a la pagina para completar el proceso!',
+    }).then((result) => {
+        if (result.isConfirmed) {
+            window.location.href = "./resumen/resumen.html";
+        }   
     })
     
 }
 
 
 
-combosAñadir.addEventListener("click", (e) => {
-    mensajePagar(e);
-    location.href = "./resumen/resumen.html";
+combosAñadir.addEventListener("click", () => {
+    mensajePagar();
+    
 
 })
 
