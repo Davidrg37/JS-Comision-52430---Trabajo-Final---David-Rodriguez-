@@ -181,15 +181,11 @@ function crearOrdenCombos(e){
 
     console.log(combosOrden)
 
-    const btnComprar1 = document.getElementById("comprar1");
-
-    btnComprar1.addEventListener("click", e =>{
-        Swal.fire(
-            'Listo',
-            'Añadiste ' + cantidad1 + " "+ menuSeleccionadoNombre,
+    Swal.fire(
+            'Listo, añadiste ' + cantidad1 + " "+ menuSeleccionadoNombre,
+            '',
             'success'
           )
-    })
 
 }
 
@@ -348,16 +344,11 @@ function crearOrdenComida(e){
     console.log(comidaSeleccionadoNombre)
     console.log(combosOrden)
 
-    const btnComprar2 = document.getElementById("comprar2");
-
-    btnComprar2.addEventListener("click", e =>{
-        Swal.fire(
-            'Listo',
-            'Añadiste ' + cantidad2 + " "+ comidaSeleccionadoNombre,
-            'success'
-          )
-    })
-
+    Swal.fire(
+        'Listo, añadiste ' + cantidad2 + " "+ comidaSeleccionadoNombre,
+        '',
+        'success'
+      )
 
 }
 
