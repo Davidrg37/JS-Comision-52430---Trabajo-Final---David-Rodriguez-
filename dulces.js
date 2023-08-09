@@ -11,7 +11,7 @@ function mensajePagar(){
 
 
 combosAñadir.addEventListener("click", (e) => {
-    mensajePagar();
+    mensajePagar(e);
     location.href = "./resumen/resumen.html";
 
 })
@@ -137,8 +137,10 @@ formularioCombos.addEventListener("submit", crearOrdenCombos)
 function crearOrdenCombos(e){
     e.preventDefault();
     console.log(ordenCombos)
+
     menuSeleccionado = ordenCombos.id;
     console.log(menuSeleccionado)
+    let menuSeleccionadoNombre = "";    
 
     cantidad1 = ordenCombos.cantidad;
     console.log(cantidad1)
@@ -146,25 +148,43 @@ function crearOrdenCombos(e){
     if(menuSeleccionado==1){
         menu1.cantidad = cantidad1;
         combosOrden.push(menu1)
+        menuSeleccionadoNombre = menu1.nombre;
     } else if (menuSeleccionado == 2){
         menu2.cantidad = cantidad1;
         combosOrden.push(menu2)
+        menuSeleccionadoNombre = menu2.nombre;
     } else if (menuSeleccionado == 3){
         menu3.cantidad = cantidad1;
         combosOrden.push(menu3)
+        menuSeleccionadoNombre = menu3.nombre;
     } else if (menuSeleccionado == 4){
         menu4.cantidad = cantidad1;
         combosOrden.push(menu4)
+        menuSeleccionadoNombre = menu4.nombre;
     } else if (menuSeleccionado == 5){
         menu5.cantidad = cantidad1;
         combosOrden.push(menu5)
+        menuSeleccionadoNombre = menu5.nombre;
     } else if (menuSeleccionado == 6){
         menu6.cantidad = cantidad1;
         combosOrden.push(menu6)
+        menuSeleccionadoNombre = menu6.nombre;
     }
+
+
+    console.log(menuSeleccionadoNombre)
 
     console.log(combosOrden)
 
+    const btnComprar1 = document.getElementById("comprar1");
+
+    btnComprar1.addEventListener("click", e =>{
+        Swal.fire(
+            'Listo',
+            'Añadiste ' + cantidad1 + " "+ menuSeleccionadoNombre,
+            'success'
+          )
+    })
 
 }
 
@@ -277,40 +297,61 @@ function crearOrdenComida(e){
     comidaSeleccionada = ordenComida.id;
     console.log(comidaSeleccionada)
 
+    let comidaSeleccionadoNombre = ""; 
+
     cantidad2 = ordenComida.cantidad;
     console.log(cantidad2)
     
     if(comidaSeleccionada==1){
         opc1.cantidad = cantidad2;
         combosOrden.push(opc1)
+        comidaSeleccionadoNombre = opc1.titulo;
     } else if (comidaSeleccionada==2){
         opc2.cantidad = cantidad2;
         combosOrden.push(opc2)
+        comidaSeleccionadoNombre = opc2.titulo;
     } else if (comidaSeleccionada==3){
         opc3.cantidad = cantidad2;
         combosOrden.push(opc3)
+        comidaSeleccionadoNombre = opc3.titulo;
     }else if (comidaSeleccionada==4){
         opc4.cantidad = cantidad2;
         combosOrden.push(opc4)
+        comidaSeleccionadoNombre = opc4.titulo;
     }else if (comidaSeleccionada==5){
         opc5.cantidad = cantidad2;
         combosOrden.push(opc5)
+        comidaSeleccionadoNombre = opc5.titulo;
     }else if (comidaSeleccionada==6){
         opc6.cantidad = cantidad2;
         combosOrden.push(opc6)
+        comidaSeleccionadoNombre = opc6.titulo;
     }else if (comidaSeleccionada==7){
         opc7.cantidad = cantidad2;
         combosOrden.push(opc7)
+        comidaSeleccionadoNombre = opc7.titulo;
     }else if (comidaSeleccionada==8){
         opc8.cantidad = cantidad2;
         combosOrden.push(opc8)
+        comidaSeleccionadoNombre = opc8.titulo;
     } else if (comidaSeleccionada==9){
         opc9.cantidad = cantidad2;
         combosOrden.push(opc9)
+        comidaSeleccionadoNombre = opc9.titulo;
     }
 
-
+    console.log(comidaSeleccionadoNombre)
     console.log(combosOrden)
+
+    const btnComprar2 = document.getElementById("comprar2");
+
+    btnComprar2.addEventListener("click", e =>{
+        Swal.fire(
+            'Listo',
+            'Añadiste ' + cantidad2 + " "+ comidaSeleccionadoNombre,
+            'success'
+          )
+    })
 
 
 }
@@ -318,13 +359,49 @@ function crearOrdenComida(e){
 
 opcionesComida();
 
+const swalWithBootstrapButtons = Swal.mixin({
+    customClass: {
+      confirmButton: 'btn btn-success',
+      cancelButton: 'btn btn-danger'
+    },
+    buttonsStyling: false
+  })
+
+
+
 const combosAñadir1 = document.getElementById("pagar2");
 combosAñadir1.addEventListener("click", (e) => {
 
-    mensajePagar
-    localStorage.setItem("orden", JSON.stringify(combosOrden));
-    location.href = "./resumen/resumen.html";
-    
+    swalWithBootstrapButtons.fire({
+        title: 'Haz culminado tu elección?',
+        text: "Una vez avances a la siguiente página, no podrás volver acá y tendrás que volver a empezar desde el menu de peliculas",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonText: 'Si, estoy seguro',
+        cancelButtonText: 'No',
+        reverseButtons: true
+      })
+      .then((result) => {
+        if (result.isConfirmed) {
+          swalWithBootstrapButtons.fire(
+            'Bien!',
+            'Vamos a llevarte a la parte final del proceso!.',
+            'success'
+          )
+          localStorage.setItem("orden", JSON.stringify(combosOrden));
+          location.href = "./resumen/resumen.html";
+        } else if (
+          /* Read more about handling dismissals below */
+          result.dismiss === Swal.DismissReason.cancel
+        ) {
+          swalWithBootstrapButtons.fire(
+            'Selecciona de nuevo!',
+            'Volverás al menú anterior!',
+            'error'
+          )
+        }
+      })
+
 })
 
 // Hasta aca la opcion de escoger comidas y bebidas //
